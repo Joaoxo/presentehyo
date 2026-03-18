@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Presente 🎁</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+<img src="imagens/flor-hyo.png"  class="flor">
+<img src="imagens/flor-hyo.png"  class="flor2">
+
+<div class="container">
+    
+    <!-- SETA ESQUERDA -->
+    <button class="seta esquerda-botao" onclick="voltar()">
+        <img src="imagens/seta.png" class="imagem-seta setaesquerda" alt="">
+    </button>
+
+    <!-- QUADRO 1 -->
+    <div class="quadro ativo" id="quadro1">
+        <h1 class="mensagem">Tenho um presente para você </h1>
+        <hr>
+        <h3 class="assinatura">
+            de: João Paulo <br>
+            para: Hemily Hyohane
+        </h3>
+        <hr>
+        <button onclick="abrirPresente()">Abrir</button>
+    </div>
+
+    <!-- QUADRO 2 -->
+    <div class="quadro" id="quadro2">
+        <div class="conteudo">
+            <h2>Feliz Aniversário! </h2>
+            <hr>
+            <p>Parabéns, Hemily Hyohane! Você merece toda a expressão, os sentimentos e a 
+                admiração que tenho. Os momentos bons que tive com você são inesquecíveis. 
+                Presto atenção à sua voz, aos seus gestos, a tudo; eles são notas musicais que 
+                incrementam o ritmo da minha vida e fazem um verdadeiro festival nela.</p>
+        </div>
+    </div>
+
+    <!-- QUADRO 3 -->
+    <div class="quadro" id="quadro3">
+        <h2>Seus Biceps!</h2>
+        <hr>
+        <p>Parabéns, Hemily Hyohane! Não posso deixar de dizer: seus bíceps são incríveis. 
+            Cada curva, cada definição mostra força, dedicação e beleza ao mesmo tempo. Eles 
+            impressionam e inspiram, e é impossível não admirar a energia e o poder que você 
+            transmite só com eles.</p>
+    </div>
+
+    <!-- QUADRO 4 -->
+    <div class="quadro" id="quadro4">
+        <h2>Uma Dinossaura</h2>
+        <hr>
+        <p>Parabéns, Hemily Hyohane! Cada momento com você é inesquecível. Sua paixão por 
+            dinossauros e pelo T-Rex me inspira: vejo em você a mesma força e majestade desses 
+            gigantes, a coragem de quem enfrenta tudo com garra e entusiasmo. Estar perto de 
+            você é como estar em um mundo pré-histórico incrível, cheio de aventuras e 
+            surpresas que só você sabe trazer.</p>
+    <img src="imagens/dinos-de-hyo/T-rex-de-hyo.png" alt="" class="T-rex">
+       
+    </div>
+    <img src="imagens/dinos-de-hyo/braquiossauro-de-hyo.png" class="braquiossauro" alt="">
+    <!-- SETA DIREITA -->
+    <button class="seta direita-botao" onclick="proximo()">
+        <img src="imagens/seta.png" class="imagem-seta setadireita" alt="">
+    </button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
