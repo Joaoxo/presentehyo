@@ -17,6 +17,8 @@ body {
     align-items: center;
     min-height: 100vh;
 
+    max-width: 100%;
+    overflow-x: hidden;
 
     margin: 0;
     overflow: hidden; /* evita scroll horizontal */
