@@ -1,7 +1,12 @@
+/* ===========================
+   IMPORT DE FONTES
+=========================== */
 /* Fonte poética para assinatura */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-/* BODY */
+/* ===========================
+   BODY
+=========================== */
 body {
     background: linear-gradient(45deg,#0400ff,#ffffff);
     font-family: Arial, sans-serif;
@@ -12,11 +17,12 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: hidden; /* evita scroll horizontal */
 }
 
-
-/* CONTAINER */
+/* ===========================
+   CONTAINER
+=========================== */
 .container {
     position: relative;
     display: flex;
@@ -24,7 +30,9 @@ body {
     align-items: center;
 }
 
-/* SETAS */
+/* ===========================
+   SETAS
+=========================== */
 .seta {
     display: none; /* invisíveis no início */
     position: absolute;
@@ -37,25 +45,25 @@ body {
     border-radius: 10px;
     cursor: pointer;
     z-index: 10;
-
 }
-
 
 .imagem-seta {
-    width: 30px;  /* Largura */
-    height: 20px; /* Altura */
-
+    width: 30px;
+    height: 20px;
 }
+
 .imagem-seta.setaesquerda {
-    transform: scaleX(-1);
+    transform: scaleX(-1); /* seta esquerda invertida */
 }
 
 .esquerda-botao { left: -75px; }
 .direita-botao { right: -75px; }
 
-/* QUADROS */
+/* ===========================
+   QUADROS
+=========================== */
 .quadro {
-    display: none;
+    display: none; /* escondidos por padrão */
     background-color: white;
     opacity: 0;
     position: relative;
@@ -64,7 +72,7 @@ body {
     padding: 40px;
     width: 300px;
     text-align: center;
-    transition: opacity 1s;
+    transition: opacity 1s; /* transição suave */
     z-index: 2;
 
     font-family: 'Dancing Script', cursive;
@@ -73,7 +81,9 @@ body {
     color: #000000;
 }
 
-/* ASSINATURA */
+/* ===========================
+   ASSINATURA
+=========================== */
 .assinatura {
     font-family: 'Dancing Script', cursive;
     font-size: 24px;
@@ -81,35 +91,44 @@ body {
     color: #000000;
 }
 
+/* ===========================
+   IMAGENS GERAIS
+=========================== */
 img{
     width: 100%;
 }
 
-/* IMAGEM DA FLOR (fundo decorativo) */
+/* ===========================
+   FLORES DECORATIVAS
+=========================== */
 .flor{
-    position: absolute;   /* permite mover livremente */
-    bottom: 0;            /* distância do topo */
-    left: 0;           /* distância da esquerda */
-    width: 700px;         /* tamanho da imagem */
-    opacity: 0.9;         /* leve transparência opcional */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 700px;
+    opacity: 0.9;
     z-index: 1;
 }
 .flor2{ 
     position: absolute;
-    transform: scaleX(-1); /* fazer a flor virá a esquerda */ 
-    bottom: 0;              /* distância da direita */
-    right: 0;            /* distância da esquerda */
-    width: 700px;           /* tamanho da imagem */
-    opacity: 0.9;          /* leve transparência opcional */
+    transform: scaleX(-1); /* espelha a flor */
+    bottom: 0;
+    right: 0;
+    width: 700px;
+    opacity: 0.9;
     z-index: 1;
 }
 
-/* IMAGEM DO DINOSSAURO */
-
+/* ===========================
+   DINOSSAUROS
+=========================== */
+/* T-Rex */
 .T-rex{
-    width: 170px;         /* tamanho */
-    margin-top: 1px;     /* distância do texto */
+    width: 170px;
+    margin-top: 1px; 
 }
+
+/* Braquiossauro */
 .braquiossauro{
     display: block;
     position: fixed;
@@ -119,13 +138,66 @@ img{
     z-index: 1;
     transition: all 1s ease;
 }
-.braquiossauro.ativo {
-    right: 0;
+.braquiossauro.ativo { right: 0; }
+.braquiossauro.desativo { right: -500px; }
+
+/* Triceratop */
+.triceratop {
+    display: block;
+    position: fixed;
+    width: 200px;
+    bottom: -200px;
+    right: 200px;
+    z-index: 2;
+    transition: all 1s ease;
 }
-.braquiossauro.desativo {
-    right: -500px;
+.triceratop.ativo { bottom: 0; }
+.triceratop.desativo { bottom: -200px; }
+
+/* Anquilossauro */
+.anquilossauro{
+    display: block;
+    position: fixed;
+    width: 250px;
+    transform: scaleX(-1);
+    bottom: -500px;
+    left: 250px;
+    transition: all 1s ease;
+    z-index: 2;
 }
-/* BOTÕES */
+.anquilossauro.ativo{ bottom: -5px; }
+.anquilossauro.desativo { bottom: -500px; }
+
+/* Espinhossauro */
+.espinhossauro {
+    display: block;
+    position: fixed;
+    width: 150px;
+    transform: scaleX(-1);
+    bottom: -500px;
+    right: 350px;
+    transition: all 1s ease;
+    z-index: 1;
+}
+.espinhossauro.ativo { bottom: -5px; }
+.espinhossauro.desativo { bottom: -500px; }
+
+/* Estegossauro */
+.estegossauro {
+    display: block;
+    position: fixed;
+    width: 500px;
+    bottom: -5px;
+    left: -500px;
+    transition: all 1s ease;
+    z-index: 1;
+}
+.estegossauro.ativo{ left: 0; }
+.estegossauro.desativo{ left: -500px; }
+
+/* ===========================
+   BOTÕES
+=========================== */
 button {
     padding: 10px 20px;
     border: 2px solid black;
@@ -143,23 +215,30 @@ button:hover {
         0 0 10px #af1038, 
         0 0 40px #ce0f3f, 
         0 0 80px #860b34;
-    
-}
-/* QUADRO ATIVO */
-.ativo {
-    display: block;
-    opacity: 1;
 }
 
-/* RESPONSIVO */
+/* ===========================
+   CLASSES DE ESTADO
+=========================== */
+.ativo { display: block; opacity: 1; }
+.desativo{ display: block; opacity: 1; }
+
+/* ===========================
+   RESPONSIVO
+=========================== */
 @media (max-width: 800px) {
+    /* Ajuste das setas */
     .seta.esquerda { left: -40px; }
     .seta.direita { right: -40px; }
-    .braquiossauro{
-        width: 25vw;
-        right: 0;
-    }
-    .braquiossauro.ativo{
-        right: 0;
-    }
+
+    /* Dinossauros responsivos */
+    .braquiossauro{ width: 25vw; right: 0; }
+    .triceratop{ width: 25vw; right: 20px; bottom: -50px; }
+    .triceratop.ativo{ bottom: 0; }
+    .anquilossauro{ width: 25vw; left: 20px; bottom: -50px; }
+    .anquilossauro.ativo{ bottom: -5px; }
+    .espinhossauro{ width: 20vw; right: 10px; bottom: -50px; }
+    .espinhossauro.ativo{ bottom: -5px; }
+    .estegossauro{ width: 40vw; left: -40px; bottom: -5px; }
+    .estegossauro.ativo{ left: 0; }
 }
