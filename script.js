@@ -1,78 +1,100 @@
+// Variáveis de controle da animação dos quadros
 let quadroAtual = 1; // começa no quadro 1
-const totalQuadros = 4;
+const totalQuadros = 4; // total de quadros disponíveis
 
-const setas = document.querySelectorAll(".seta");
-const braquiossauro = document.querySelectorAll(".braquiossauro")
+// Seleciona elementos do DOM
+const setas = document.querySelectorAll(".seta"); // setas de navegação
+const braquiossauro = document.querySelectorAll(".braquiossauro"); // dinosaurios
+const triceratop = document.querySelectorAll(".triceratop");
+const anquilossauro = document.querySelectorAll(".anquilossauro");
+const espinhossauro = document.querySelectorAll(".espinhossauro");
+const estegossauro = document.querySelectorAll(".estegossauro");
 
-function animacao(elemento, classeativo, classedesativo = null,mode = "on"){
-    if(mode=== "on"){
-        
-        elemento.forEach( s =>  {
-            if(classedesativo){s.classList.remove(classedesativo)} // se tiver o desativo no lugar 
-            s.classList.remove(classeativo); // reset
-            void s.offsetWidth; // FORÇA o navegador reiniciar animação
-            s.classList.add(classeativo); // anima de novo
+// Função para animar ou desanimar elementos
+function animacao(elemento, mode = true, classeativo = "ativo", classedesativo = "desativo") {
+    if(mode === true){ // ativa animação
+        elemento.forEach(s => {
+            if(classedesativo){ 
+                s.classList.remove(classedesativo); // remove classe de desativado se existir
+            }
+            s.classList.remove(classeativo); // remove classe ativo para reset
+            void s.offsetWidth; // força o navegador a reiniciar a animação (reflow)
+            s.classList.add(classeativo); // adiciona novamente classe ativo para animar
         });
     }
-    if (mode === "off"){
-        
-        elemento.forEach( s =>  {
-            s.classList.remove(classeativo); // anima para tirar
-            s.classList.add(classedesativo);
+    if(mode === false){ // desativa animação
+        elemento.forEach(s => {
+            s.classList.remove(classeativo); // remove animação
+            s.classList.add(classedesativo); // adiciona classe de desativado
         });
     }
 }
-function execucao(name,classed = null,mode = "on"){
-    name.forEach( s => {
-        if(mode === "on" && classed){
-            s.classList.add(classed);  
+
+// Função genérica para adicionar ou remover classes em elementos
+function execucao(name, classed = null, mode = true){
+    name.forEach(s => {
+        if(mode === true && classed){
+            s.classList.add(classed); // adiciona classe
         }
-        if (mode === "off" && classed){
-            s.classList.remove(classed);
+        if(mode === false && classed){
+            s.classList.remove(classed); // remove classe
         }
     });
 }
 
+// Função para abrir o presente (passa do quadro 1 para o 2)
 function abrirPresente() {
-    // Esconde o primeiro quadro
+    // Esconde o quadro 1
     document.getElementById("quadro1").classList.remove("ativo");
-    // Mostra o segundo quadro
+    // Mostra o quadro 2
     quadroAtual = 2;
     document.getElementById(`quadro${quadroAtual}`).classList.add("ativo");
-
-    // Mostra setas
+    // Mostra as setas de navegação
     execucao(setas,"ativo");
 }
 
+// Função para avançar para o próximo quadro
 function proximo() {
     if (quadroAtual < totalQuadros) {
+        // Esconde o quadro atual
         document.getElementById(`quadro${quadroAtual}`).classList.remove("ativo");
+        // Incrementa o quadro atual
         quadroAtual++;
+        // Mostra o próximo quadro
         document.getElementById(`quadro${quadroAtual}`).classList.add("ativo");
     }
+    // Se estiver no último quadro, ativa animação dos dinossauros
     if (quadroAtual === totalQuadros){
-        animacao(braquiossauro,"ativo","desativo");
+        animacao(braquiossauro);
+        animacao(triceratop);
+        animacao(anquilossauro);
+        animacao(espinhossauro);
+        animacao(estegossauro);
     }
-    
 }
 
+// Função para voltar para o quadro anterior
 function voltar() {
     if (quadroAtual > 2) { 
-        // volta normalmente para quadros anteriores (3→2)
+        // volta normalmente para quadros anteriores (3 → 2)
         document.getElementById(`quadro${quadroAtual}`).classList.remove("ativo");
         quadroAtual--;
         document.getElementById(`quadro${quadroAtual}`).classList.add("ativo");
-    } else if (quadroAtual === 2) {
+    } else if (quadroAtual === 2) { 
         // se estiver no quadro 2 e clicar voltar, retorna ao quadro 1
         document.getElementById(`quadro${quadroAtual}`).classList.remove("ativo");
         quadroAtual = 1;
         document.getElementById(`quadro${quadroAtual}`).classList.add("ativo");
         // Esconde as setas novamente
-        execucao(setas,"ativo", "off");
-       
-        
-    } 
-    if(quadroAtual < totalQuadros){
-            animacao(braquiossauro,"ativo","desativo","off");}
+        execucao(setas,"ativo", false);
+    }
     
+    // Se não estiver no último quadro, desativa animação dos dinossauros
+    if(quadroAtual < totalQuadros){
+        animacao(braquiossauro,false);
+        animacao(triceratop,false);
+        animacao(anquilossauro,false);
+        animacao(espinhossauro,false);
+        animacao(estegossauro,false);
+    }
 }
