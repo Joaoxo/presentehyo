@@ -226,7 +226,7 @@ button:hover {
 /* ===========================
    RESPONSIVO
 =========================== */
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     /* Ajuste das setas */
     .seta.esquerda { left: -40px; }
     .seta.direita { right: -40px; }
