@@ -51,7 +51,7 @@ function proximo() {
         document.getElementById(`quadro${quadroAtual}`).classList.add("ativo");
     }
     if (quadroAtual === totalQuadros){
-        animacao(braquiossauro,"ativo");
+        animacao(braquiossauro,"ativo","desativo");
     }
     
 }
