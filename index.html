@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Presente 🎁</title>
+
+    <!-- Fonte decorativa do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <!-- Link para o arquivo CSS externo -->
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
+
+<!-- Flores decorativas na página -->
 <img src="imagens/flor-hyo.png"  class="flor">
 <img src="imagens/flor-hyo.png"  class="flor2">
 
 <div class="container">
     
-    <!-- SETA ESQUERDA -->
+    <!-- BOTÃO SETA ESQUERDA PARA VOLTAR -->
     <button class="seta esquerda-botao" onclick="voltar()">
         <img src="imagens/seta.png" class="imagem-seta setaesquerda" alt="">
     </button>
 
-    <!-- QUADRO 1 -->
+    <!-- QUADRO 1: Mensagem inicial -->
     <div class="quadro ativo" id="quadro1">
         <h1 class="mensagem">Tenho um presente para você </h1>
         <hr>
@@ -27,50 +32,66 @@
             para: Hemily Hyohane
         </h3>
         <hr>
+        <!-- Botão para abrir o presente e ir para o quadro 2 -->
         <button onclick="abrirPresente()">Abrir</button>
     </div>
 
-    <!-- QUADRO 2 -->
+    <!-- QUADRO 2: Mensagem de aniversário -->
     <div class="quadro" id="quadro2">
         <div class="conteudo">
             <h2>Feliz Aniversário! </h2>
             <hr>
-            <p>Parabéns, Hemily Hyohane! Você merece toda a expressão, os sentimentos e a 
+            <p>
+                Parabéns, Hemily Hyohane! Você merece toda a expressão, os sentimentos e a 
                 admiração que tenho. Os momentos bons que tive com você são inesquecíveis. 
                 Presto atenção à sua voz, aos seus gestos, a tudo; eles são notas musicais que 
-                incrementam o ritmo da minha vida e fazem um verdadeiro festival nela.</p>
+                incrementam o ritmo da minha vida e fazem um verdadeiro festival nela.
+            </p>
         </div>
     </div>
 
-    <!-- QUADRO 3 -->
+    <!-- QUADRO 3: Mensagem divertida sobre os bíceps -->
     <div class="quadro" id="quadro3">
         <h2>Seus Biceps!</h2>
         <hr>
-        <p>Parabéns, Hemily Hyohane! Não posso deixar de dizer: seus bíceps são incríveis. 
+        <p>
+            Parabéns, Hemily Hyohane! Não posso deixar de dizer: seus bíceps são incríveis. 
             Cada curva, cada definição mostra força, dedicação e beleza ao mesmo tempo. Eles 
             impressionam e inspiram, e é impossível não admirar a energia e o poder que você 
-            transmite só com eles.</p>
+            transmite só com eles.
+        </p>
     </div>
 
-    <!-- QUADRO 4 -->
+    <!-- QUADRO 4: Mensagem sobre dinossauros -->
     <div class="quadro" id="quadro4">
         <h2>Uma Dinossaura</h2>
         <hr>
-        <p>Parabéns, Hemily Hyohane! Cada momento com você é inesquecível. Sua paixão por 
+        <p>
+            Parabéns, Hemily Hyohane! Cada momento com você é inesquecível. Sua paixão por 
             dinossauros e pelo T-Rex me inspira: vejo em você a mesma força e majestade desses 
             gigantes, a coragem de quem enfrenta tudo com garra e entusiasmo. Estar perto de 
             você é como estar em um mundo pré-histórico incrível, cheio de aventuras e 
-            surpresas que só você sabe trazer.</p>
-    <img src="imagens/dinos-de-hyo/T-rex-de-hyo.png" alt="" class="T-rex">
-       
+            surpresas que só você sabe trazer.
+        </p>
+        <!-- Imagem do T-Rex principal -->
+        <img src="imagens/dinos-de-hyo/T-rex-de-hyo.png" alt="" class="T-rex">
     </div>
+
+    <!-- Imagens dos dinossauros para animação -->
     <img src="imagens/dinos-de-hyo/braquiossauro-de-hyo.png" class="braquiossauro" alt="">
-    <!-- SETA DIREITA -->
+    <img src="imagens/dinos-de-hyo/triceratop-de-hyo.png" class="triceratop" alt="">
+    <img src="imagens/dinos-de-hyo/anquilossauro-de-hyo.png" class="anquilossauro" alt="">
+    <img src="imagens/dinos-de-hyo/espinhossauro-de-hyo.png" class="espinhossauro" alt="">
+    <img src="imagens/dinos-de-hyo/estegossauro-de-hyo.png" class="estegossauro" alt="">
+
+    <!-- BOTÃO SETA DIREITA PARA AVANÇAR -->
     <button class="seta direita-botao" onclick="proximo()">
-        <img src="imagens/seta.png" class="imagem-seta setadireita" alt="">
+        <img src="imagens/seta.png" class="imagem-seta setadireita" >
     </button>
+
 </div>
 
-    <script src="script.js"></script>
+<!-- Script JavaScript externo -->
+<script src="script.js"></script>
 </body>
 </html>
