@@ -17,10 +17,13 @@ body {
     align-items: center;
     min-height: 100vh;
 
+ 
+    height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto; /* permite rolagem */
+
     padding: 0;
-    overscroll-behavior: none;
-    margin: 0;
-    overflow: hidden; /* evita scroll horizontal */
+    margin: 0;
 }
 
 /* ===========================
