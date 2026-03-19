@@ -12,7 +12,7 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -228,7 +228,7 @@ button:hover {
 /* ===========================
    RESPONSIVO
 =========================== */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     /* Ajuste das setas */
     .seta.esquerda { left: -40px; }
     .seta.direita { right: -40px; }
