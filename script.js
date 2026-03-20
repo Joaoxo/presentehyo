@@ -11,23 +11,26 @@ const espinhossauro = document.querySelectorAll(".espinhossauro");
 const estegossauro = document.querySelectorAll(".estegossauro");
 
 // Função para animar ou desanimar elementos
-function animacao(elemento, mode = true, classeativo = "ativo", classedesativo = "desativo") {
-    if(mode === true){ // ativa animação
-        elemento.forEach(s => {
-            if(classedesativo){ 
-                s.classList.remove(classedesativo); // remove classe de desativado se existir
-            }
-            s.classList.remove(classeativo); // remove classe ativo para reset
-            void s.offsetWidth; // força o navegador a reiniciar a animação (reflow)
-            s.classList.add(classeativo); // adiciona novamente classe ativo para animar
-        });
-    }
-    if(mode === false){ // desativa animação
-        elemento.forEach(s => {
-            s.classList.remove(classeativo); // remove animação
-            s.classList.add(classedesativo); // adiciona classe de desativado
-        });
-    }
+function animacao(elementos, mode = true, classeativo = "ativo", classedesativo = "desativo") {
+    for (elemento of elementos){
+    
+        if(mode === true){ // ativa animação
+            elemento.forEach(s => {
+                if(classedesativo){ 
+                    s.classList.remove(classedesativo); // remove classe de desativado se existir
+                }
+                s.classList.remove(classeativo); // remove classe ativo para reset
+                void s.offsetWidth; // força o navegador a reiniciar a animação (reflow)
+                s.classList.add(classeativo); // adiciona novamente classe ativo para animar
+                            });
+        }
+        if(mode === false){ // desativa animação
+            elemento.forEach(s => {
+                s.classList.remove(classeativo); // remove animação
+                s.classList.add(classedesativo); // adiciona classe de desativado
+                            });
+        }
+    }    
 }
 
 // Função genérica para adicionar ou remover classes em elementos
@@ -65,11 +68,12 @@ function proximo() {
     }
     // Se estiver no último quadro, ativa animação dos dinossauros
     if (quadroAtual === totalQuadros){
-        animacao(braquiossauro);
-        animacao(triceratop);
-        animacao(anquilossauro);
-        animacao(espinhossauro);
-        animacao(estegossauro);
+         animacao(  [braquiossauro,
+                    triceratop,
+                    anquilossauro,
+                    espinhossauro,
+                    estegossauro
+                    ]);
     }
 }
 
@@ -91,10 +95,11 @@ function voltar() {
     
     // Se não estiver no último quadro, desativa animação dos dinossauros
     if(quadroAtual < totalQuadros){
-        animacao(braquiossauro,false);
-        animacao(triceratop,false);
-        animacao(anquilossauro,false);
-        animacao(espinhossauro,false);
-        animacao(estegossauro,false);
+         animacao(  [braquiossauro,
+                    triceratop,
+                    anquilossauro,
+                    espinhossauro,
+                    estegossauro
+                    ],false);;
     }
 }
