@@ -100,6 +100,6 @@ function voltar() {
                     anquilossauro,
                     espinhossauro,
                     estegossauro
-                    ],false);;
+                    ],false);
     }
 }
